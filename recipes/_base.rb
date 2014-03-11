@@ -18,6 +18,7 @@
 #
 
 include_recipe 'verify-base'
+include_recipe 'java'
 
 users_manage 'jenkins' do
   data_bag 'jenkins-users'
