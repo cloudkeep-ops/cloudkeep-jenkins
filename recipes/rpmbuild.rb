@@ -19,7 +19,7 @@
 
 include_recipe 'cloudkeep-jenkins::_base'
 
-%w{ expect rpm-build }.each do |pkg|
+%w{ expect python2-devel rpm-build }.each do |pkg|
   package pkg
 end
 
