@@ -19,6 +19,8 @@
 
 include_recipe 'cloudkeep-jenkins::_base'
 
-package 'rpm-build'
+%w{ expect rpm-build }.each do |pkg|
+  package pkg
+end
 
 # TODO(dmend): Automate adding GPG key

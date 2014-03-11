@@ -20,6 +20,8 @@
 include_recipe 'verify-base'
 include_recipe 'java'
 
+package 'git'
+
 users_manage 'jenkins' do
   data_bag 'jenkins-users'
   action [ :create ]
