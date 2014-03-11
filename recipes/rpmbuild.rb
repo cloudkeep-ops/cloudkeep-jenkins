@@ -24,3 +24,15 @@ include_recipe 'cloudkeep-jenkins::_base'
 end
 
 # TODO(dmend): Automate adding GPG key
+
+gpg = data_bag_item(node.chef_environment, 'gpg') 
+
+template '/var/lib/jenkins/.rpmmacros' do
+  source 'rpmmacros.erb'
+  mode 0600
+  owner 'jenkins'
+  group 'jenkins'
+  variables ({
+    :key_id => gpg['key_id']
+  })
+end
